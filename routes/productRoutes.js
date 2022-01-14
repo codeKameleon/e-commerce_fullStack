@@ -9,9 +9,6 @@ router.get('/', getAllProducts)
 // @description GET one product
 // @route GET /api/products/:id
 
-// @description GET one product
-// @route GET /api/products/:id
-
 // @description POST a new product (only ADMIN)
 // @route POST /api/products
 
