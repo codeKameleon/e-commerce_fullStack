@@ -1,8 +1,8 @@
-const Product =  require('../models/Product')
+const ProductModel =  require('../models/productModel')
 
 const getAllProducts = async (req, res) => {
     try {
-        const products = await Product.find({})
+        const products = await ProductModel.find({})
         res.send(products)
     } catch (error) {
         console.error(error)
