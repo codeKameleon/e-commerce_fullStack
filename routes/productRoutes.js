@@ -1,12 +1,10 @@
 const express =  require('express')
+const { getAllProducts } = require('../controllers/productController')
 const router =  express.Router()
 
 // @description GET all products
 // @route GET /api/products
-
-router.get('/', (req, res) => {
-    res.send('test')
-})
+router.get('/', getAllProducts)
 
 // @description GET one product
 // @route GET /api/products/:id
