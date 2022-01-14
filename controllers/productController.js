@@ -10,6 +10,17 @@ const getAllProducts = async (req, res) => {
     }
 }
 
+const getProductById = async (req, res) => {
+    try {
+        const product = await ProductModel.findById(req.params.id)
+        res.send(product)
+    } catch (error) {
+        console.error(error)
+        res.status(400).send({message: "Server Error"})
+    }
+}
+
 module.exports = {
-    getAllProducts
+    getAllProducts,
+    getProductById
 }

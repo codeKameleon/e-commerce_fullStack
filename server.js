@@ -1,24 +1,20 @@
+require('dotenv').config()
 const express = require('express')
 
 const connectDB = require('./config/db')
 const productRoutes  = require('./routes/productRoutes')
 
 const app = express()
-
 const port = process.env.PORT || 4000
 
-//db connection
+// Connection to Database (MongoDB Atlas)
 connectDB()
 
-//initialize routes
-app.use('/api/products', productRoutes)
-
+// Express config
 app.use(express.json())
 
-//error handling middleware
-app.use(function(err,req,res,next){
-    console.log(err);
-    res.status(422).send({error: err.message})
-});
+// Routes
+app.use('/api/products', productRoutes)
 
-app.listen(port, "localhost", () => console.log('server started'))
+// Server
+app.listen(port, () => console.log('server started'))
