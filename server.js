@@ -1,20 +1,12 @@
-require('dotenv').config()
-
 const express = require('express')
-const mongoose = require('mongoose')
+
+const connectDB = require('./config/db');
 const router  = require('./routes/api')
+
 const app = express()
 
-const dbURI = process.env.DB_URI
-const port = process.env.PORT || 4000
-
 //db connection
-mongoose.connect(dbURI)
-.then((result) => {
-    app.listen(port, "localhost", () => console.log('server started'))
-    console.log('db connected')
-})
-.catch((err) => console.log(err))
+connectDB()
 
 //initialize routes
 app.use('/api', router)
