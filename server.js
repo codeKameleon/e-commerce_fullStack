@@ -1,7 +1,7 @@
 const express = require('express')
 
 const connectDB = require('./config/db')
-const router  = require('./routes/api')
+const productRoutes  = require('./routes/productRoutes')
 
 const app = express()
 
@@ -11,7 +11,7 @@ const port = process.env.PORT || 4000
 connectDB()
 
 //initialize routes
-app.use('/api', router)
+app.use('/api/products', productRoutes)
 
 app.use(express.json())
 
