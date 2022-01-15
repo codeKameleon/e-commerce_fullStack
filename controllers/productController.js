@@ -6,7 +6,7 @@ const getAllProducts = async (req, res) => {
         res.send(products)
     } catch (error) {
         console.error(error)
-        res.status(500).send({message: "Server Error"})
+        res.status(400).send({message: "Bad request"})
     }
 }
 
@@ -16,7 +16,7 @@ const getProductById = async (req, res) => {
         res.send(product)
     } catch (error) {
         console.error(error)
-        res.status(400).send({message: "Server Error"})
+        res.status(400).send({message: "Bad Request"})
     }
 }
 
