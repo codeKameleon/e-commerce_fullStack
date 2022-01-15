@@ -20,7 +20,26 @@ const getProductById = async (req, res) => {
     }
 }
 
+const addNewProduct = async (req, res) => {
+    const newProduct = new ProductModel({
+        title: req.body.title,
+        price: req.body.price,
+        description: req.body.description,
+        category: req.body.category,
+        image: req.body.image,
+        rating: req.body.rating
+    })
+    try {
+        const savedProduct = await newProduct.save()
+        res.send(savedProduct)
+    } catch (error) {
+        console.error(error)
+        res.status(400).send({message: "Bad Request"})
+    }
+}
+
 module.exports = {
     getAllProducts,
-    getProductById
+    getProductById,
+    addNewProduct
 }

@@ -1,5 +1,9 @@
 const express =  require('express')
-const { getAllProducts, getProductById } = require('../controllers/productController')
+const { 
+    getAllProducts, 
+    getProductById,
+    addNewProduct
+} = require('../controllers/productController')
 const router =  express.Router()
 
 // @description GET all products
@@ -12,6 +16,7 @@ router.get('/:id', getProductById)
 
 // @description POST a new product (only ADMIN)  
 // @route POST /api/products
+router.post('/', addNewProduct)
 
 // @description UPDATE a product (only ADMIN)
 // @route PUT /api/products/:id
