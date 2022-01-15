@@ -23,18 +23,24 @@ const userSchema = new mongoose.Schema({
     name: {
         firstname: {
             type: String,
-            required: true
+            required: true,
+            min: 6,
+            max: 255
         },
         name : {
             type: String,
-            required: true
+            required: true,
+            min: 6,
+            max: 255
         }
     },
     email: {
         type: String,
         required: true,
         validate: [isEmail],
-        unique: true
+        unique: true,
+        min: 6,
+        max: 255
     },
     username: {
         type: String,
@@ -43,7 +49,9 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        min: 6,
+        max: 1024 // larger than other fields because the password will be hashed
     },
     phone: {
         type: String
@@ -60,4 +68,4 @@ const userSchema = new mongoose.Schema({
 
 const UserModel = mongoose.model('users', userSchema)
 
-module.exports  = UserModel
+module.exports = UserModel
