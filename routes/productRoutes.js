@@ -2,7 +2,8 @@ const express =  require('express')
 const { 
     getAllProducts, 
     getProductById,
-    addNewProduct
+    addNewProduct,
+    updateProduct
 } = require('../controllers/productController')
 const router =  express.Router()
 
@@ -20,6 +21,7 @@ router.post('/', addNewProduct)
 
 // @description UPDATE a product (only ADMIN)
 // @route PUT /api/products/:id
+router.put('/:id', updateProduct)
 
 // @description DELETE a product (only ADMIN)
 // @route DELETE /api/products/:id

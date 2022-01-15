@@ -38,8 +38,31 @@ const addNewProduct = async (req, res) => {
     }
 }
 
+const updateProduct = async (req, res) => {
+    const update = {
+        title: req.body.title,
+        price: req.body.price,
+        description: req.body.description,
+        category: req.body.category,
+        image: req.body.image,
+        rating: req.body.rating
+    }
+    try {
+        const product = await ProductModel.findByIdAndUpdate(
+            req.params.id,
+            update,
+            { new: true, upsert: true } // return the modified document rather than the original and create the object if it doesn't exist
+        )
+        res.send(product)
+    } catch (error) {
+        console.error(error)
+        res.status(400).send({message: "Bad Request"})
+    }
+}
+
 module.exports = {
     getAllProducts,
     getProductById,
-    addNewProduct
+    addNewProduct,
+    updateProduct
 }
