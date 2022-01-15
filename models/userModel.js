@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
             min: 6,
             max: 255
         },
-        name : {
+        lastname : {
             type: String,
             required: true,
             min: 6,
@@ -55,10 +55,6 @@ const userSchema = new mongoose.Schema({
     },
     phone: {
         type: String
-    },
-    inscriptionDate: {
-        type: Date,
-        deault: Date.now()
     },
     admin: {
         type: Boolean,

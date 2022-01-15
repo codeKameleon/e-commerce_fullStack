@@ -10,7 +10,7 @@ router.get('/', getAllProducts)
 // @route GET /api/products/:id
 router.get('/:id', getProductById)
 
-// @description POST a new product (only ADMIN)
+// @description POST a new product (only ADMIN)  
 // @route POST /api/products
 
 // @description UPDATE a product (only ADMIN)
