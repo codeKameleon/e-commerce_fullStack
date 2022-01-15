@@ -3,7 +3,8 @@ const {
     getAllProducts, 
     getProductById,
     addNewProduct,
-    updateProduct
+    updateProduct,
+    deleteProduct
 } = require('../controllers/productController')
 const router =  express.Router()
 
@@ -25,6 +26,6 @@ router.put('/:id', updateProduct)
 
 // @description DELETE a product (only ADMIN)
 // @route DELETE /api/products/:id
-
+router.delete('/:id', deleteProduct)
 
 module.exports = router

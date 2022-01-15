@@ -60,9 +60,20 @@ const updateProduct = async (req, res) => {
     }
 }
 
+const deleteProduct = async (req, res) => {
+    try {
+        const product = await ProductModel.findByIdAndDelete(req.params.id)
+        res.send(product)
+    } catch (error) {
+        console.error(error)
+        res.status(400).send({message: "Bad Request"})
+    }
+}
+
 module.exports = {
     getAllProducts,
     getProductById,
     addNewProduct,
-    updateProduct
+    updateProduct,
+    deleteProduct
 }
