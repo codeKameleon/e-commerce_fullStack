@@ -1,4 +1,6 @@
+const ObjectID = require("mongoose").Types.ObjectId
 const ProductModel =  require('../models/productModel')
+
 
 const getAllProducts = async (req, res) => {
     try {
@@ -12,6 +14,9 @@ const getAllProducts = async (req, res) => {
 
 const getProductById = async (req, res) => {
     try {
+        if(!ObjectID.isValid(req.params.id)) {
+            return res.status(400).send(({message: "This product does not exist"}))
+        }
         const product = await ProductModel.findById(req.params.id)
         res.send(product)
     } catch (error) {
@@ -48,6 +53,9 @@ const updateProduct = async (req, res) => {
         rating: req.body.rating
     }
     try {
+        if(!ObjectID.isValid(req.params.id)) {
+            return res.status(400).send(({message: "This product does not exist"}))
+        }
         const product = await ProductModel.findByIdAndUpdate(
             req.params.id,
             update,
@@ -62,6 +70,9 @@ const updateProduct = async (req, res) => {
 
 const deleteProduct = async (req, res) => {
     try {
+        if(!ObjectID.isValid(req.params.id)) {
+            return res.status(400).send(({message: "This product does not exist"}))
+        }
         const product = await ProductModel.findByIdAndDelete(req.params.id)
         res.send(product)
     } catch (error) {
