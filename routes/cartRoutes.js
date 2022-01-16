@@ -1,4 +1,7 @@
 const express =  require('express')
+
+const verifyToken = require('../middlewares/verifyTokenMiddleware')
+
 const { getAllCarts, getCartById, updateCart } = require('../controllers/cartController')
 const router =  express.Router()
 
@@ -12,6 +15,6 @@ router.get('/:id', getCartById)
 
 // @description UPDATE a cart with a new product
 // @route PUT /api/carts/:id
-router.put('/:id', updateCart)
+router.put('/:id', verifyToken, updateCart)
 
 module.exports = router

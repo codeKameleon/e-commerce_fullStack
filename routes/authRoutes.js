@@ -12,6 +12,6 @@ router.post('/login', logUser)
 
 // @description LOG OUT an existing user 
 // @route PUT /api/account/logout
-router.get('/login', logOutUser)
+router.get('/logout', logOutUser)
 
 module.exports = router

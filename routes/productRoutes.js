@@ -1,4 +1,7 @@
 const express =  require('express')
+
+const verifyToken = require('../middlewares/verifyTokenMiddleware')
+
 const { 
     getAllProducts, 
     getProductById,
@@ -6,6 +9,7 @@ const {
     updateProduct,
     deleteProduct
 } = require('../controllers/productController')
+
 const router =  express.Router()
 
 // @description GET all products
@@ -18,14 +22,14 @@ router.get('/:id', getProductById)
 
 // @description POST a new product (only ADMIN)  
 // @route POST /api/products
-router.post('/', addNewProduct)
+router.post('/', verifyToken, addNewProduct)
 
 // @description UPDATE a product (only ADMIN)
 // @route PUT /api/products/:id
-router.put('/:id', updateProduct)
+router.put('/:id', verifyToken, updateProduct)
 
 // @description DELETE a product (only ADMIN)
 // @route DELETE /api/products/:id
-router.delete('/:id', deleteProduct)
+router.delete('/:id', verifyToken, deleteProduct)
 
 module.exports = router
