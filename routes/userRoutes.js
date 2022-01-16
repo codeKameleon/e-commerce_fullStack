@@ -1,5 +1,5 @@
 const express =  require('express')
-const { getAllUsers, createNewUser } = require('../controllers/userController')
+const { getAllUsers } = require('../controllers/userController')
 const router =  express.Router()
 
 // @description GET all users
@@ -8,10 +8,6 @@ router.get('/', getAllUsers)
 
 // @description GET one user
 // @route GET /api/users/:id
-
-// @description POST a new user (REGISTER)
-// @route POST /api/users
-router.post('/', createNewUser)
 
 // @description UPDATE a user 
 // @route PUT /api/users/:id

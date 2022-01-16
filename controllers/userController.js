@@ -9,22 +9,12 @@ const getAllUsers = async(req, res) => {
         res.status(400).send({message: "Bad request"})
     }
 }
+const getUserById = async(req, res) => {}
 
-const createNewUser = async(req, res) => {
-    const user = new UserModel({
-        address: req.body.address,
-        name: req.body.name,
-        email: req.body.email,
-        username: req.body.username,
-        password: req.body.password,
-        phone: req.body.phone
-    })
-    try {
-        const savedUser = await user.save()
-        res.send(savedUser)
-    } catch(error) {
-        res.status(400).send(error)
-    }
+const editUser = async(req, res) => {}
+
+const deleteUser = async(req, res) => {}
+
+module.exports = { 
+    getAllUsers
 }
-
-module.exports = { getAllUsers, createNewUser }
