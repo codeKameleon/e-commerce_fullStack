@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
         firstname: {
             type: String,
             required: true,
-            min: 6,
+            min: 3,
             max: 255
         },
         lastname : {
@@ -45,12 +45,14 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
+        min: 6,
+        max: 255,
         unique: true
     },
     password: {
         type: String,
         required: true,
-        min: 6,
+        min: 8,
         max: 1024 // larger than other fields because the password will be hashed
     },
     phone: {
