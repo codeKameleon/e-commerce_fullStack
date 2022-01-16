@@ -3,6 +3,7 @@ const express = require('express')
 
 const connectDB = require('./config/db')
 const productRoutes  = require('./routes/productRoutes')
+const cartRoutes  = require('./routes/cartRoutes')
 const userRoutes  = require('./routes/userRoutes')
 
 const app = express()
@@ -19,6 +20,7 @@ app.use(express.json())
 
 // Routes Middlewares
 app.use('/api/products', productRoutes)
+app.use('/api/carts', cartRoutes)
 app.use('/api/users', userRoutes)
 
 // Server
