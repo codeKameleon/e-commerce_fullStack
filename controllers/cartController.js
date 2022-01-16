@@ -24,9 +24,29 @@ const getCartById = async (req, res) => {
     }
 }
 
-// TO DO : add product to cart
+const updateCart = async (req, res) => {
+    const update =  {
+        products: req.body.products
+    }
+
+    try {
+        if(!ObjectID.isValid(req.params.id)) {
+            return res.status(400).send(({message: "This cart does not exist"}))
+        }
+        const cart = await CartModel.findByIdAndUpdate(
+            req.params.id,
+            { $push: update },
+            { new: true, upsert: true }
+        )
+        res.send(cart)
+    } catch(error) {
+        console.log(error)
+        res.status(400).send({message: "Bad Request"})
+    }
+}
 
 module.exports = {
     getAllCarts,
-    getCartById
+    getCartById,
+    updateCart
 }
