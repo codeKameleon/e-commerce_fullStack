@@ -10,7 +10,8 @@ const createNewUser = async(req, res) => {
     if(error) return res.status(400).send({ error: error.details[0].message })
 
     // Check is user already exists
-    const registeringUser = UserModel.findOne({ email: req.body.email })
+    const registeringUser = await UserModel.findOne({ email: req.body.email })
+    console.log(registeringUser)
     if(registeringUser) return res.status(400).send({ message: "This email is already taken"})
 
     // Crypt password
@@ -23,7 +24,8 @@ const createNewUser = async(req, res) => {
         email: req.body.email,
         username: req.body.username,
         password: hashPassword,
-        phone: req.body.phone
+        phone: req.body.phone,
+        admin: req.body.admin
     })
 
     try {
@@ -44,7 +46,7 @@ const logUser = async(req, res) => {
     if(!validPassword) return res.status(400).send({ message: "Email or password is wrong"})
 
     // Create and assign a token
-    const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET )
+    const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn: "24h"} )
     res.header('auth-token', token).send({message: token})
 }
 

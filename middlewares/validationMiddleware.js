@@ -13,9 +13,9 @@ const registerValidation = data => {
             .required(),
 
         password: Joi.string()
-            .pattern(new RegExp('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{6,}$'))
-            .required() 
-    })
+            .min(6)
+            .required()
+    }).options({ allowUnknown: true })
 
     return schema.validate(data)
 }

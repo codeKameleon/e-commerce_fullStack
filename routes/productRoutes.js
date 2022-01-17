@@ -1,6 +1,6 @@
 const express =  require('express')
 
-const verifyToken = require('../middlewares/verifyTokenMiddleware')
+const { verifyToken, verifyUserRole } = require('../middlewares/authMiddleware')
 
 const { 
     getAllProducts, 
@@ -22,14 +22,14 @@ router.get('/:id', getProductById)
 
 // @description POST a new product (only ADMIN)  
 // @route POST /api/products
-router.post('/', verifyToken, addNewProduct)
+router.post('/', verifyToken, verifyUserRole, addNewProduct)
 
 // @description UPDATE a product (only ADMIN)
 // @route PUT /api/products/:id
-router.put('/:id', verifyToken, updateProduct)
+router.put('/:id', verifyToken, verifyUserRole, updateProduct)
 
 // @description DELETE a product (only ADMIN)
 // @route DELETE /api/products/:id
-router.delete('/:id', verifyToken, deleteProduct)
+router.delete('/:id', verifyToken, verifyUserRole, deleteProduct)
 
 module.exports = router
