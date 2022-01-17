@@ -2,8 +2,6 @@
 This project was done as part of my Becode training. It's a simplified clone of the [Fake Store API](https://fakestoreapi.com/).
 
 ## Technology Stack
-The project was created with a MVC structure using :
-
 | |
 | ------| 
 | MongoDB |
