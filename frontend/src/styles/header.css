@@ -1,0 +1,45 @@
+/* All Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #a29c96;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2%;
+}
+.header-left,
+.header-center, 
+.header-right {
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+}
+    /*? All btn*/
+    .btn-shop,
+    .btn-about,
+    .btn-discover,
+    .btn-user,
+    .btn-cart,
+    .btn-currency {
+        width: 10vw;
+        height: 5vh;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 1em;
+        color: white;
+    }
+/* Header left */
+
+/* Header center */
+.logo {
+    width: 10vw;
+}
+
+/* Header right */
+.btn-user,
+.btn-cart {
+    font-size: 1.75em;
+}
