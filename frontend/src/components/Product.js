@@ -8,7 +8,7 @@ export default function Product() {
 
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products/')
+        fetch('http://localhost:4000/api/products')
             .then(res => res.json())
             .then(data => (setProduct(data), setFilterProduct(data)))
     }, [])

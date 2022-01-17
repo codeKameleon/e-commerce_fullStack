@@ -19,6 +19,7 @@ const getProductById = async (req, res) => {
             return res.status(400).send(({message: "This product does not exist"}))
         }
         const product = await ProductModel.findById(req.params.id)
+        console.log(product)
         res.send(product)
     } catch (error) {
         console.error(error)

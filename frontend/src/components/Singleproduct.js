@@ -14,7 +14,7 @@ export default function Singleproduct() {
     }, [])
 
     const fetchItem = async () => {
-        const fetchItem = await fetch(`https://fakestoreapi.com/products/${id}`)
+        const fetchItem = await fetch(`http://localhost:4000/api/products/${id}`)
         const item = await fetchItem.json();
         setItem(item)
     }
@@ -37,9 +37,9 @@ export default function Singleproduct() {
                 <h2>{"$" + item.price}</h2>
                 <div className='order'>
                     <div className='quantityDiv'>
-                        <button className='minus' onClick={decreaseQuantity}>-</button>
+                        <button className='minus'>-</button>
                         <input type="number" className='quantity' />
-                        <button className='plus' onClick={increaseQuantity}>+</button>
+                        <button className='plus'>+</button>
                     </div>
                     <button className='addToBag'>ADD TO BAG</button>
                 </div>
