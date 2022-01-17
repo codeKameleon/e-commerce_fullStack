@@ -47,7 +47,7 @@ Then open your browser at [localhost:3000](http://localhost:3000)
 ## Features to add
 
 ### Backend
-- Host DB on Heroku
+- Add Homepage with API requests
 - Implementation pattern Regex for password (Register)
 - Refactor "Add product to cart" logic
 - Create Logout controller and route (+ expire token before redirect)
