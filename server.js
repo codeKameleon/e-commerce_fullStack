@@ -17,7 +17,7 @@ dotenv.config()
 // Connection to Database (MongoDB Atlas)
 connectDB()
 
-// Middleware
+// Middlewares
 app.use(express.json())
 
 // Routes Middlewares
@@ -27,4 +27,4 @@ app.use('/api/users', userRoutes)
 app.use('/api/account', authRoutes)
 
 // Server
-app.listen(PORT, () => console.log(`server started and runnning at port ${PORT}`))
+app.listen(PORT, () => console.log(`Server started and runnning at port ${PORT}`))

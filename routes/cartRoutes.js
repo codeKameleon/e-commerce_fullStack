@@ -3,7 +3,9 @@ const express =  require('express')
 const { verifyToken } = require('../middlewares/authMiddleware')
 
 const { getAllCarts, getCartById, updateCart } = require('../controllers/cartController')
+
 const router =  express.Router()
+
 
 // @description GET all carts
 // @route GET /api/carts

@@ -1,6 +1,9 @@
 const express =  require('express')
+
 const { createNewUser, logUser, logOutUser } = require('../controllers/authController')
+
 const router =  express.Router()
+
 
 // @description ADD a new user
 // @route POST /api/account/register

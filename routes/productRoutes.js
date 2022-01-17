@@ -12,6 +12,7 @@ const {
 
 const router =  express.Router()
 
+
 // @description GET all products
 // @route GET /api/products
 router.get('/', getAllProducts)
