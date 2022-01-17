@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/e-commerce_fullStack/tree/frontend/static/css/main.fdbe6487.css",
-    "main.js": "/e-commerce_fullStack/tree/frontend/static/js/main.bf0812a0.js",
-    "index.html": "/e-commerce_fullStack/tree/frontend/index.html",
-    "main.fdbe6487.css.map": "/e-commerce_fullStack/tree/frontend/static/css/main.fdbe6487.css.map",
-    "main.bf0812a0.js.map": "/e-commerce_fullStack/tree/frontend/static/js/main.bf0812a0.js.map"
+    "main.css": "/e-commerce_fullStack/static/css/main.fdbe6487.css",
+    "main.js": "/e-commerce_fullStack/static/js/main.bf0812a0.js",
+    "index.html": "/e-commerce_fullStack/index.html",
+    "main.fdbe6487.css.map": "/e-commerce_fullStack/static/css/main.fdbe6487.css.map",
+    "main.bf0812a0.js.map": "/e-commerce_fullStack/static/js/main.bf0812a0.js.map"
   },
   "entrypoints": [
     "static/css/main.fdbe6487.css",
