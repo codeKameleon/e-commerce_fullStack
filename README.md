@@ -12,21 +12,22 @@ The project was created with a MVC structure using :
 
 ## API
 
-## Products
+### Products
 | Method | Routes | Description
 | --- | --- | --- |
 | GET | /api/products | Get all products
 | GET | /api/products/:id | Get a single product
 | POST | /api/products/:id | Add a new product (ADMIN access mandatory)
-| PUT | /api/products/:id | Update a product (ADMIN access mandatory
-| DELETE | /api/products/:id | Delete a new product (ADMIN access mandatory
+| PUT | /api/products/:id | Update a product (ADMIN access mandatory)
+| DELETE | /api/products/:id | Delete a new product (ADMIN access mandatory)
 
-## Carts
+### Carts
 | Method | Routes | Description
 | --- | --- | --- |
 | GET | /api/carts | Get all carts
 | GET | /api/carts/:id | Get a single cart
 | PUT | /api/carts/:id | Update cart products list
+
 
 ## Usage
 
