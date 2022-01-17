@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import '../styles/home.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import Product from './Product';
 
 export default function Home() {
     const inputRef = useRef();
@@ -8,12 +9,10 @@ export default function Home() {
 
     function emailInput() {
         const inputElement = inputRef.current;
-        console.log(inputElement);
     }
 
     function passwordInput() {
         const inputElement = inputRef.current;
-        console.log(inputElement);
     }
 
     const login = {
@@ -52,6 +51,7 @@ export default function Home() {
                     <button className='homeLoginButton' onClick={() => sendLogin()}>Login</button>
                     <p className='homeP'>Don't have an account ? <a href="/register" className='homeRegister'>Sign up</a></p>
                 </section>
+                <Product />
             </main>
         </>
     )

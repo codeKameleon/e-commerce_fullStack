@@ -4,6 +4,11 @@
     justify-content: center;
 }
 
+a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .product {
     display: flex;
     flex-direction: column;

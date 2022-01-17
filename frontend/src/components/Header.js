@@ -1,34 +1,46 @@
 import React from 'react'
-import { useNavigate } from 'react-router'
 import '../styles/header.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
-    let navigate = useNavigate();
-
-    function goToProduct() {
-        navigate("/product")
-    }
-    function goToHome() {
-        navigate("/")
-    }
 
     return (
         <header>
             <section className='header-left'>
-                <button className='btn-shop' onClick={goToProduct}>Shop <i className="fas fa-angle-down"></i></button>
-                <button className='btn-about'>About <i className="fas fa-angle-down"></i></button>
-                <button className='btn-discover'>Discover <i className="fas fa-angle-down"></i></button>
+                <Link to={"/"}>
+                    <img src="./icon/logo.png" alt="logo" className='logo' />
+                </Link>
             </section>
 
             <section className='header-center'>
-                <img src="logo.png" alt="logo" className='logo' onClick={goToHome} />
+                <Link to={"/"}>
+                    <button className='btn-shop'>Home</button>
+                </Link>
+                <p className='space'>|</p>
+                <Link to={"/product"}>
+                    <button className='btn-shop'>Shop</button>
+                </Link>
+                <p className='space'>|</p>
+                <Link to={"/"}>
+                    <button className='btn-shop'>About</button>
+                </Link>
+                <p className='space'>|</p>
+                <Link to={"/"}>
+                    <button className='btn-shop'>Contact</button>
+                </Link>
             </section>
 
             <section className='header-right'>
-                <button className='btn-currency'>$ USD <i className="fas fa-angle-down"></i></button>
-                <button className='btn-user'><i className="far fa-user"></i></button>
-                <button className='btn-cart'><i className="fas fa-shopping-basket"></i></button>
+                <Link to={"/cart"}>
+                    <button className='btn-cart'><i class="fas fa-shopping-bag"></i></button>
+                </Link>
+                <Link to={"/login"}>
+                    <button className='btn-user'>Login</button>
+                </Link>
+                <Link to={"/register"}>
+                    <button className='btn-user'>Register</button>
+                </Link>
             </section>
         </header>
     )
