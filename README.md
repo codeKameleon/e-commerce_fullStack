@@ -47,10 +47,9 @@ Then open your browser at [localhost:3000](http://localhost:3000)
 ## Features to add
 
 ### Backend
-- Add Homepage with API requests
+- Create Logout controller and route (+ expire token before redirect)
 - Implementation pattern Regex for password (Register)
 - Refactor "Add product to cart" logic
-- Create Logout controller and route (+ expire token before redirect)
 - Create controllers and routes to handle users edit + delete
 
 ### Frontend

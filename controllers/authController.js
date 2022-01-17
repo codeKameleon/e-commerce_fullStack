@@ -55,8 +55,9 @@ const logUser = async(req, res) => {
     res.header('auth-token', token).send({token: token})
 }
 
-// TO DO
-const logOutUser = async(req, res) => {}
+const logOutUser = async(req, res) => {
+    res.redirect('/api/products')
+}
 
 module.exports = {
     createNewUser,
