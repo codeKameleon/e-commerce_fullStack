@@ -22,11 +22,16 @@ connectDB()
 app.use(cors())
 app.use(express.json())
 
+// Home route
+app.get("/", (req, res) => res.redirect("/api/products"))
+
 // Routes Middlewares
 app.use('/api/products', productRoutes)
 app.use('/api/carts', cartRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/account', authRoutes)
+
+console.log('dirname', __dirname)
 
 // Server
 app.listen(PORT, () => console.log(`Server started and runnning at port ${PORT}`))
