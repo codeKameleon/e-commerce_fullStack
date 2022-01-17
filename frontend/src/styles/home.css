@@ -1,11 +1,57 @@
-/* section {
+.home {
     display: flex;
     justify-content: space-evenly;    
-    width: 60vw;
     flex-wrap: wrap;
-    padding-top: 3%;
+    width: 99vw;
 }
 
-img {
-    width: 25vw;
-} */
+.homeImg {
+    width: 59vw;
+}
+
+.homeLogin {
+    width: 40vw;
+    background: white;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    margin: auto;
+}
+
+hr {
+    width: 30vw;
+    margin-bottom: 5%;
+}
+
+.homeLoginInput {
+    width: 30vw;
+    height: 3vh;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.homeLabel {
+    margin-bottom: 2%;
+}
+
+.homeLoginButton {
+    width: 10vw;
+    height: 4vh;
+    background-color: #ffb26d;
+    border: 1px solid #ffb26d;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.homeP {
+    margin-top: 5%;
+}
+
+.homeRegister {
+    color: #ffb26d;
+    text-decoration: none;
+}
