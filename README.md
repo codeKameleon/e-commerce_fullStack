@@ -47,15 +47,14 @@ Then open your browser at [localhost:3000](http://localhost:3000)
 ## Features to add
 
 ### Backend
-- Create Logout controller and route (+ expire token before redirect)
+- Finish and Refactor "Add product to cart" logic (Cart)
 - Implementation pattern Regex for password (Register)
-- Refactor "Add product to cart" logic
-- Create controllers and routes to handle users edit + delete
+- Create controllers and routes to handle users edit + delete (Users)
 
 ### Frontend
-- Create Cart component
 - Create Login component
 - Create Register component
+- Create Cart component
 
 
 #### Authors

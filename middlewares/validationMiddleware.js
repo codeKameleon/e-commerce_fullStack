@@ -3,8 +3,7 @@ const Joi = require('joi')
 const registerValidation = data => {
     const schema =  Joi.object({
         username: Joi.string()
-            .alphanum()
-            .min(6)
+            .min(3)
             .required(),
         
         email: Joi.string()
