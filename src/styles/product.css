@@ -4,10 +4,8 @@
     justify-content: center;
 }
 
-a {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.linkProduct {
+    padding: 1%;
 }
 .product {
     display: flex;
@@ -20,7 +18,6 @@ a {
     text-align: center;
     background-color: white;
     border-radius: 15px;
-    padding: 1%;
     box-shadow: 10px 5px 5px #00000029;
     max-width: 18%;
 }

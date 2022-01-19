@@ -15,30 +15,30 @@ export default function Header() {
 
             <section className='header-center'>
                 <Link to={"/"}>
-                    <button className='btn-shop'>Home</button>
+                    <button className='btn-nav'>Home</button>
                 </Link>
                 <p className='space'>|</p>
                 <Link to={"/product"}>
-                    <button className='btn-shop'>Shop</button>
+                    <button className='btn-nav'>Shop</button>
                 </Link>
                 <p className='space'>|</p>
                 <Link to={"/"}>
-                    <button className='btn-shop'>About</button>
+                    <button className='btn-nav'>About</button>
                 </Link>
                 <p className='space'>|</p>
                 <Link to={"/"}>
-                    <button className='btn-shop'>Contact</button>
+                    <button className='btn-nav'>Contact</button>
                 </Link>
             </section>
 
             <section className='header-right'>
-                <Link to={"/cart"}>
-                    <button className='btn-cart'><i class="fas fa-shopping-bag"></i></button>
+                <Link to={"/cart"} className='link-cart'>
+                    <button className='btn-cart'><i className="fas fa-shopping-bag"></i></button>
                 </Link>
                 <Link to={"/login"}>
                     <button className='btn-user'>Login</button>
                 </Link>
-                <Link to={"/register"}>
+                <Link to={"/register"} className='register'>
                     <button className='btn-user'>Register</button>
                 </Link>
             </section>

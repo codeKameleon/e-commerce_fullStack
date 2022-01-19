@@ -12,13 +12,14 @@ header {
 .header-right {
     display: flex;
     justify-content: center;
-    width: 30vw;
+    width: 40vw;
+    align-items: center;
 }
     /*? All btn*/
     .btn-shop,
     .btn-user,
     .btn-cart,
-    .btn-currency {
+    .btn-nav{
         width: 10vw;
         height: 5vh;
         background: none;
@@ -29,6 +30,9 @@ header {
         font-size: 1.05em;
     }
 /* Header left */
+.header-left {
+    width: 19vw;
+}
 
 /* Header center */
 .logo {
@@ -36,9 +40,27 @@ header {
 }
 
 /* Header right */
+.header-right {
+    margin-left: 11%
+}
+
 .btn-user,
 .btn-cart {
+    width: 5vw;
     font-size: 1.15em;
+    border: 1px solid white;
+    margin: 0 1%;
+    border-radius: 15px;
+}
+
+.btn-user:hover,
+.btn-car:hover {
+    background-color: #ffa04e;
+    transition: 0.2s;
+}
+
+.link-cart {
+ margin: 0 10%;
 }
 
 .space {
@@ -47,4 +69,8 @@ header {
 
 .btn-shop:hover {
     font-size: 1.08em;
+}
+
+.register {
+    margin-left: 2%;
 }
