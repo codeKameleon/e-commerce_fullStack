@@ -8,8 +8,6 @@ const CartModel = require('../models/cartModel')
    
 
 const createNewUser = async(req, res) => {
-    let userId;
-
     // Register form validation
     const  { error } = registerValidation(req.body)
     if(error) return res.status(400).send({ error: error.details[0].message })

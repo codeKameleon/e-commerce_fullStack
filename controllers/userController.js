@@ -11,13 +11,6 @@ const getAllUsers = async(req, res) => {
     }
 }
 
-// TO DO
-const getUserById = async(req, res) => {}
-const editUser = async(req, res) => {
-    
-}
-const deleteUser = async(req, res) => {}
-
 module.exports = { 
     getAllUsers
 }
