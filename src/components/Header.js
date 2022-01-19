@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/header.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import { Link } from 'react-router-dom'
+import { useCookies } from 'react-cookie'
 
 export default function Header() {
+    const [cookies, setCookie] = useCookies(['jwt']);
 
     return (
         <header>
@@ -35,12 +37,24 @@ export default function Header() {
                 <Link to={"/cart"} className='link-cart'>
                     <button className='btn-cart'><i className="fas fa-shopping-bag"></i></button>
                 </Link>
-                <Link to={"/login"}>
-                    <button className='btn-user'>Login</button>
-                </Link>
-                <Link to={"/register"} className='register'>
-                    <button className='btn-user'>Register</button>
-                </Link>
+                {
+                    !cookies.jwt ?
+                        // if there isn't cookie
+                        <>
+                            <Link to={"/login"}>
+                                <button className='btn-user'>Login</button>
+                            </Link>
+                            <Link to={"/register"} className='register'>
+                                <button className='btn-user'>Register</button>
+                            </Link>
+                        </>
+                        // if there is cookie
+                        :
+                        <Link to={"/user"}>
+                            <button className='userProfil'><i className="fas fa-user"></i></button>
+                        </Link>
+                }
+
             </section>
         </header>
     )

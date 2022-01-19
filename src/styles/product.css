@@ -56,6 +56,7 @@
     background-color: white;
     color: black;
     cursor: pointer;
+    justify-content: center;
 }
 
 .productButton:focus {
@@ -90,4 +91,25 @@
 
 body {
  background-color: #fff5ec;
+}
+
+@media screen and (max-width: 980px) {
+    .productButton {
+        width: 17vw;
+        height: 4vh;
+        text-align: center;
+    }
+
+    .allProduct {
+        
+    }
+
+    .product {
+        flex: 45vw;
+        max-width: 45vw;
+    }
+
+    .productImg {
+        height: 20vh;
+    }
 }

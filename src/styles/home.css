@@ -67,3 +67,25 @@ hr {
 .png {
     width: 50vw;
 }
+
+@media screen and (max-width: 980px) {
+    .png {
+        display: none;
+    }
+
+    .homeLogin {
+        width: 95vw;
+    }
+
+    hr {
+        width: 80vw;
+    }
+
+    .homeLoginInput {
+        width: 62vw;
+    }
+
+    .homeLoginButton {
+        width: 20vw;
+    }
+}

@@ -74,3 +74,44 @@ header {
 .register {
     margin-left: 2%;
 }
+
+.userProfil {
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    width: 2.5vw;
+    height: 5vh;
+    cursor: pointer;
+}
+
+.fa-user {
+    font-size: 1.25vw;
+}
+
+@media screen and (max-width: 980px) {
+    .logo {
+        width: 25vw;
+    }
+
+    .header-center {
+        display: none;
+    }
+
+    header {
+        justify-content: space-around;
+    }
+
+    .btn-user,
+    .btn-cart {
+        width: 15vw;
+        font-size: 0.75em;
+    }
+
+    .userProfil {
+        width: 10vw;
+    }
+
+    .fa-user {
+        font-size: 3.5vw;
+    }
+}

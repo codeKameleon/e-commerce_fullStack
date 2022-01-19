@@ -8,7 +8,7 @@ export default function Product() {
 
 
     useEffect(() => {
-        fetch('https://becode-e-commerce.herokuapp.com/api/products')
+        fetch(`${process.env.REACT_APP_API}products`)
             .then(res => res.json())
             .then(data => (setProduct(data), setFilterProduct(data)))
     }, [])
