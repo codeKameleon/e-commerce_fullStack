@@ -72,3 +72,19 @@
 .addToBag:hover {
     background: #ffa554;
 }
+
+@media screen and (max-width: 980px) {
+    .mainSingle {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .sectionSingleOne {
+        width: 95vw;
+        height: 20vh;
+    }
+
+    .sectionSingleTwo {
+        width: 90vw;
+    }
+}

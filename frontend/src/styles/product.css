@@ -4,6 +4,9 @@
     justify-content: center;
 }
 
+.linkProduct {
+    padding: 1%;
+}
 .product {
     display: flex;
     flex-direction: column;
@@ -15,7 +18,6 @@
     text-align: center;
     background-color: white;
     border-radius: 15px;
-    padding: 1%;
     box-shadow: 10px 5px 5px #00000029;
     max-width: 18%;
 }
@@ -54,6 +56,7 @@
     background-color: white;
     color: black;
     cursor: pointer;
+    justify-content: center;
 }
 
 .productButton:focus {
@@ -88,4 +91,25 @@
 
 body {
  background-color: #fff5ec;
+}
+
+@media screen and (max-width: 980px) {
+    .productButton {
+        width: 17vw;
+        height: 4vh;
+        text-align: center;
+    }
+
+    .allProduct {
+        
+    }
+
+    .product {
+        flex: 45vw;
+        max-width: 45vw;
+    }
+
+    .productImg {
+        height: 20vh;
+    }
 }

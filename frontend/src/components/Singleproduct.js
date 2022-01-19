@@ -14,7 +14,7 @@ export default function Singleproduct() {
     }, [])
 
     const fetchItem = async () => {
-        const fetchItem = await fetch(`http://localhost:4000/api/products/${id}`)
+        const fetchItem = await fetch(`${process.env.REACT_APP_API}products/${id}`)
         const item = await fetchItem.json();
         setItem(item)
     }

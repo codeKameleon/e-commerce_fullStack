@@ -1,11 +1,91 @@
-/* section {
+.home {
     display: flex;
     justify-content: space-evenly;    
-    width: 60vw;
     flex-wrap: wrap;
-    padding-top: 3%;
 }
 
-img {
+.homeImg {
+    width: 59vw;
+}
+
+.homeLogin {
+    width: 30vw;
+    background: white;
+    border-radius: 50px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    margin: auto;
+}
+.homeH {
+    text-align: center;
+}
+
+.homeLoginInput {
+    margin: 2% auto;
+}
+
+hr {
     width: 25vw;
-} */
+    margin-bottom: 5%;
+}
+
+.homeLoginInput {
+    width: 20vw;
+    height: 3vh;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.homeLabel {
+    margin: 0 17%;
+    margin-bottom: 2%;
+}
+
+.homeLoginButton {
+    width: 10vw;
+    height: 4.5vh;
+    background-color: #ffb26d;
+    border: 1px solid #ffb26d;
+    border-radius: 15px;
+    cursor: pointer;
+    margin:  1% auto;
+}
+
+.homeP {
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.homeRegister {
+    color: #ffb26d;
+    text-decoration: none;
+}
+
+.png {
+    width: 50vw;
+}
+
+@media screen and (max-width: 980px) {
+    .png {
+        display: none;
+    }
+
+    .homeLogin {
+        width: 95vw;
+    }
+
+    hr {
+        width: 80vw;
+    }
+
+    .homeLoginInput {
+        width: 62vw;
+    }
+
+    .homeLoginButton {
+        width: 20vw;
+    }
+}

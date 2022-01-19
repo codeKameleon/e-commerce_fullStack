@@ -1,34 +1,60 @@
-import React from 'react'
-import { useNavigate } from 'react-router'
+import React, { useEffect } from 'react'
 import '../styles/header.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import { Link } from 'react-router-dom'
+import { useCookies } from 'react-cookie'
 
 export default function Header() {
-    let navigate = useNavigate();
-
-    function goToProduct() {
-        navigate("/product")
-    }
-    function goToHome() {
-        navigate("/")
-    }
+    const [cookies, setCookie] = useCookies(['jwt']);
 
     return (
         <header>
             <section className='header-left'>
-                <button className='btn-shop' onClick={goToProduct}>Shop <i className="fas fa-angle-down"></i></button>
-                <button className='btn-about'>About <i className="fas fa-angle-down"></i></button>
-                <button className='btn-discover'>Discover <i className="fas fa-angle-down"></i></button>
+                <Link to={"/"}>
+                    <img src="./icon/logo.png" alt="logo" className='logo' />
+                </Link>
             </section>
 
             <section className='header-center'>
-                <img src="logo.png" alt="logo" className='logo' onClick={goToHome} />
+                <Link to={"/"}>
+                    <button className='btn-nav'>Home</button>
+                </Link>
+                <p className='space'>|</p>
+                <Link to={"/product"}>
+                    <button className='btn-nav'>Shop</button>
+                </Link>
+                <p className='space'>|</p>
+                <Link to={"/"}>
+                    <button className='btn-nav'>About</button>
+                </Link>
+                <p className='space'>|</p>
+                <Link to={"/"}>
+                    <button className='btn-nav'>Contact</button>
+                </Link>
             </section>
 
             <section className='header-right'>
-                <button className='btn-currency'>$ USD <i className="fas fa-angle-down"></i></button>
-                <button className='btn-user'><i className="far fa-user"></i></button>
-                <button className='btn-cart'><i className="fas fa-shopping-basket"></i></button>
+                <Link to={"/cart"} className='link-cart'>
+                    <button className='btn-cart'><i className="fas fa-shopping-bag"></i></button>
+                </Link>
+                {
+                    !cookies.jwt ?
+                        // if there isn't cookie
+                        <>
+                            <Link to={"/login"}>
+                                <button className='btn-user'>Login</button>
+                            </Link>
+                            <Link to={"/register"} className='register'>
+                                <button className='btn-user'>Register</button>
+                            </Link>
+                        </>
+                        // if there is cookie
+                        :
+                        <Link to={"/user"}>
+                            <button className='userProfil'><i className="fas fa-user"></i></button>
+                        </Link>
+                }
+
             </section>
         </header>
     )
