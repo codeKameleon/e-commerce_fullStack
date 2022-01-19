@@ -4,9 +4,12 @@ const jwt = require('jsonwebtoken')
 const { registerValidation } = require('../middlewares/validationMiddleware')
 
 const UserModel = require('../models/userModel')
+const CartModel = require('../models/cartModel')
    
 
 const createNewUser = async(req, res) => {
+    let userId;
+
     // Register form validation
     const  { error } = registerValidation(req.body)
     if(error) return res.status(400).send({ error: error.details[0].message })
@@ -29,8 +32,19 @@ const createNewUser = async(req, res) => {
         admin: req.body.admin
     })
 
+    const cart = new CartModel({
+        userId: user._id,
+        products: []
+    })
+    
     try {
-        const newUser = await user.save()
+        const newUser = await user.save((err, docs) => {
+            if(err) {
+                return res.status(400).send({message : err})
+            } else {
+                cart.save()
+            }
+        })
         res.send(newUser)
     } catch(error) {
         res.status(400).send(error)

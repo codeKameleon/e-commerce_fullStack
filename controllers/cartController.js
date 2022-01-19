@@ -26,22 +26,6 @@ const getCartById = async (req, res) => {
     }
 }
 
-const addNewCart = async (req, res) => {
-    const newCart = new CartModel({
-        userId: req.body.userId,
-        date: req.body.date,
-        products: req.body.products
-    })
-
-    try {
-        const savedCart = await newCart.save()
-        res.send(savedCart)
-    } catch (error) {
-        console.error(error)
-        res.status(400).send({message: `Bad request - ${error}`})
-    }
-}
-
 const addProductsToCart = async (req, res) => {
     const products =  {
         products: req.body.products
@@ -63,10 +47,8 @@ const addProductsToCart = async (req, res) => {
     }
 }
 
-
 module.exports = {
     getAllCarts,
     getCartById,
-    addNewCart,
     addProductsToCart
 }

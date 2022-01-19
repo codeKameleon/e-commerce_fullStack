@@ -5,7 +5,6 @@ const { verifyToken } = require('../middlewares/authMiddleware')
 const { 
     getAllCarts, 
     getCartById, 
-    addNewCart,
     addProductsToCart
  } = require('../controllers/cartController')
 
@@ -20,16 +19,14 @@ router.get('/', getAllCarts)
 // @route GET /api/carts/:id
 router.get('/:id', getCartById)
 
-// @description POST a new cart
-// @route POST /api/carts/
-router.post('/', verifyToken, addNewCart)
-
 // @description POST new products in cart
-// @route POST /api/carts/:id
+// @route POST /api/add-cart/:id
 router.post('/:id', verifyToken, addProductsToCart)
 
 // @description UPDATE a product in cart 
-// @route PUT /api/carts/:id
-// router.put('/:id/', verifyToken, updateProductsToCart)
+// @route POST /api/edit-cart/:id
+
+// @description DELETE a product in cart 
+// @route DELETE /delete-cart/:id
 
 module.exports = router
