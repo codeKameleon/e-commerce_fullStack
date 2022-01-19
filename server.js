@@ -20,6 +20,7 @@ connectDB()
 
 // Middlewares
 app.use(cors())
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
 // Home route

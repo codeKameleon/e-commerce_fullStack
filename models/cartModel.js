@@ -1,22 +1,28 @@
 const mongoose = require("mongoose")
 
+const ObjectId = mongoose.Schema.Types.ObjectId
+
 const cartSchema = new mongoose.Schema({
     userId: {
-        type: Number,
+        type: ObjectId,
+        ref: 'users',
         required: true
     },
     date: {
         type: Date,
-        required: true,
         default: Date.now()
     },
     products: [
         {
             productId: {
-                type: Number
+                type: ObjectId,
+                required: true,
+                ref: 'products',
+                unique: true
             },
             quantity: {
-                type: Number
+                type: Number,
+                required: true
             }
         }
     ]

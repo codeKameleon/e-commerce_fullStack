@@ -13,7 +13,6 @@ const createNewUser = async(req, res) => {
 
     // Check is user already exists
     const registeringUser = await UserModel.findOne({ email: req.body.email })
-    console.log(registeringUser)
     if(registeringUser) return res.status(400).send({ message: "This email is already taken"})
 
     // Crypt password
@@ -53,6 +52,7 @@ const logUser = async(req, res) => {
     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn: "24h"})
 
     res.header('auth-token', token).send({token: token})
+    console.log('res header', res.headersSent)
 }
 
 const logOutUser = async(req, res) => {

@@ -26,8 +26,24 @@ const getCartById = async (req, res) => {
     }
 }
 
-const updateCart = async (req, res) => {
-    const update =  {
+const addNewCart = async (req, res) => {
+    const newCart = new CartModel({
+        userId: req.body.userId,
+        date: req.body.date,
+        products: req.body.products
+    })
+
+    try {
+        const savedCart = await newCart.save()
+        res.send(savedCart)
+    } catch (error) {
+        console.error(error)
+        res.status(400).send({message: `Bad request - ${error}`})
+    }
+}
+
+const addProductsToCart = async (req, res) => {
+    const products =  {
         products: req.body.products
     }
 
@@ -35,20 +51,22 @@ const updateCart = async (req, res) => {
         if(!ObjectID.isValid(req.params.id)) {
             return res.status(400).send(({message: "This cart does not exist"}))
         }
-        const cart = await CartModel.findByIdAndUpdate(
+        const productsUpdated = await CartModel.findByIdAndUpdate(
             req.params.id,
-            { $push: update },
+            { $push: productsUpdated },
             { new: true, upsert: true }
         )
-        res.send(cart)
+        res.send(products)
     } catch(error) {
         console.log(error)
         res.status(400).send({message: "Bad Request"})
     }
 }
 
+
 module.exports = {
     getAllCarts,
     getCartById,
-    updateCart
+    addNewCart,
+    addProductsToCart
 }
